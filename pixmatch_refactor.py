@@ -82,8 +82,8 @@ def Leaderboard(what_to_do):
                 leaderboard[str(leaderboard_dict_lngth + 1)] = {'NameCountry': mystate.GameDetails[3], 'HighestScore': mystate.myscore}
                 leaderboard = dict(sorted(leaderboard.items(), key=lambda item: item[1]['HighestScore'], reverse=True))  # sort desc
 
-                if len(leaderboard) > 3:
-                    for i in range(len(leaderboard)-3): leaderboard.popitem()    # rmv last kdict ey
+                if len(leaderboard) > 4:
+                    for i in range(len(leaderboard)-4): leaderboard.popitem()    # rmv last kdict ey
 
                 json.dump(leaderboard, open(vpth + 'leaderboard.json', 'w'))     # write file
 
@@ -94,7 +94,7 @@ def Leaderboard(what_to_do):
                     
                 leaderboard = dict(sorted(leaderboard.items(), key=lambda item: item[1]['HighestScore'], reverse=True))  # sort desc
 
-                sc0, sc1, sc2, sc3 = st.columns((2,3,3,3))
+                sc0, sc1, sc2, sc3 , sc4= st.columns((2,3,3,3,3))
                 rknt = 0
                 for vkey in leaderboard.keys():
                     if leaderboard[vkey]['NameCountry'] != '':
@@ -104,6 +104,7 @@ def Leaderboard(what_to_do):
                             sc1.write(f"🥇 | {leaderboard[vkey]['NameCountry']}: :red[{leaderboard[vkey]['HighestScore']}]")
                         elif rknt == 2: sc2.write(f"🥈 | {leaderboard[vkey]['NameCountry']}: :red[{leaderboard[vkey]['HighestScore']}]")
                         elif rknt == 3: sc3.write(f"🥈 | {leaderboard[vkey]['NameCountry']}: :red[{leaderboard[vkey]['HighestScore']}]")
+                        elif rknt == 4: sc4.write(f"🥈 | {leaderboard[vkey]['NameCountry']}: :red[{leaderboard[vkey]['HighestScore']}]")
 
 
 #Esta función configura y muestra la página inicial del juego.
@@ -324,11 +325,14 @@ def NewGame():
         globals()['cols' + str(i)] = st.columns(tlst)
     
     # Recorre las celdas del tablero y muestra las imágenes correspondientes
+    cont = 0
     for vcell in range(1, (total_cells_per_row_or_col ** 2)+1):
         if 1 <= vcell <= (total_cells_per_row_or_col * 1):
             arr_ref = '1'
             mval = 0
-
+        if cont = (total_cells_per_row_or_col * 1)+1:
+               mystate.runpage = Main
+              st.rerun()
         elif ((total_cells_per_row_or_col * 1)+1) <= vcell <= (total_cells_per_row_or_col * 2):
             arr_ref = '2'
             mval = (total_cells_per_row_or_col * 1)
@@ -371,6 +375,7 @@ def NewGame():
                 globals()['cols' + arr_ref][vcell-mval].markdown(pressed_emoji.replace('|fill_variable|', '✅️'), True)
             
             elif mystate.plyrbtns[vcell]['isTrueFalse'] == False:
+                cont +=1 
                 globals()['cols' + arr_ref][vcell-mval].markdown(pressed_emoji.replace('|fill_variable|', '❌'), True)
 
         else:

@@ -68,3 +68,5 @@ Se podría tener una clase que se encargue de toda la lógica que deberá seguir
 - DefinirCantidadEmojisSeleccionados: Establecer la cantidad de emojis seleccionados en el juego.
 - CalcularEmojisRestantes: Calcular los emojis restantes por seleccionar en el juego.
 - Otros métodos relacionados con la lógica del juego.
+
+![DiagramadeClases.png](img/DiagramadeClases.png)

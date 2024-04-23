@@ -70,3 +70,29 @@ Se podría tener una clase que se encargue de toda la lógica que deberá seguir
 - Otros métodos relacionados con la lógica del juego.
 
 ![DiagramadeClases.png](img/DiagramadeClases.png)
+
+
+En cuanto a la organizacion se deidio plantearlo de esta forma:
+
+source/
+├── docs/
+│   └── README.md
+│
+├── functional/
+│   └── leaderboard.json
+│
+├── main/
+│   ├── board.py
+│   ├── leaderboard.py
+│   └── player.py
+│
+├── view/
+│   ├── view.py
+│   └── main.py
+│
+├── img/
+│   └── (archivos de recursos gráficos)
+│
+└── venv/
+    ├── (archivos del entorno virtual)
+    └── requirements.txt

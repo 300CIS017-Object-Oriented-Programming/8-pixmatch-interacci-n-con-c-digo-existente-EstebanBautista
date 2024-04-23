@@ -46,8 +46,8 @@ Detalla en este markdown lo siguiente:
 - **Imagen del UML del diagrama de clases**  Adjunta una imagen del UML del diagrama de clases como una forma visual de planificar y entender la estructura de las clases, métodos, atributos y relaciones que podría tener una versión mejorada del código fuente.
 - **Organización de archivos:** Propon una estructura de organización de los archivos de este proyecto para que no queden todos en la raiz principal. Investiga cuáles podrían ser buenas formas de organizar los directorios y a partir de tu investigación indica qué directorios crearías y cómo los organizarías.
 
-### Clases a definir
-# Clase jugador: 
+# Clases a definir
+### Clase jugador: 
 Guardaria toda la información necesaria de un jugador, como el puntaje que lleva, los intentos que lleva en la partida, otros datos del usuario.
 **Metodos clase jugador:**
 - ObtenerNombre: Obtener el nombre del jugador.
@@ -56,13 +56,13 @@ Guardaria toda la información necesaria de un jugador, como el puntaje que llev
 - ObtenerCantidadFallos: Obtener la cantidad de fallos del jugador.
 - OtrosDatosUsuario: Método para manejar otros datos del usuario.
   
-# Clase Emojis:
+### Clase Emojis:
 Esta clase guardaria todo lo relacionado con los emojis que se mostrarán en el juego, para tenerlo de una forma más organizada.
 **Metodos clase Emojis:** 
 - SetEmojis: Establecer las listas con todos los emojis que se usarán en el juego.
 - SetEmojisDificultad: Asignar los emojis que aparecerán según la dificultad elegida.
 
-# Clase juego: 
+### Clase juego: 
 Se podría tener una clase que se encargue de toda la lógica que deberá seguir el programa para que funcione correctamente y no se tenga todo en un solo lugar
 **Metodos clase Emojis:** 
 - DefinirCantidadEmojisSeleccionados: Establecer la cantidad de emojis seleccionados en el juego.
